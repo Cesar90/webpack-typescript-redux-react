@@ -14,6 +14,9 @@
     "moduleResolution": "node",
     // For absolute import
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     //https://stackoverflow.com/questions/56238356/understanding-esmoduleinterop-in-tsconfig-file
     // esModuleInterop allows you to work with packages that use
     // common js as with regular package using import (require() module.export) = common js

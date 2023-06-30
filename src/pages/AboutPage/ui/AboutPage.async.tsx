@@ -1,4 +1,3 @@
-import { resolve } from 'path/posix'
 import { lazy } from 'react'
 
 // export const AboutPageAsync = lazy(() => import('./AboutPage'))
