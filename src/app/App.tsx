@@ -5,6 +5,7 @@ import { useTheme } from './provides/ThemeProvider';
 import { classNames } from '../shared/lib/classNames/classNames';
 import { AppRouter } from './provides/router';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -16,7 +17,10 @@ const App = () => {
       {/* <Link to={'/'}>Main Page</Link>
       <Link to={'/about'}>About</Link> */}
       <Navbar />
-      <AppRouter />
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
       {/* <button onClick={toggleTheme}>TOOGLE</button> */}
     </div>
   )
