@@ -9,7 +9,7 @@ import { AppRouter } from './provides/router';
 
 function App() {
     const { theme, toggleTheme } = useTheme();
-    const bool = true;
+
     return (
         <div className={
             classNames('app', { hovered: true }, [theme, 'cls1', 'cls2'])

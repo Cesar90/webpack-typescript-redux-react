@@ -31,7 +31,7 @@ export default {
         'node_modules',
     ],
     testMatch: [
-        //Found the difference between MAC OS and WINDOWS!!!
+        // Found the difference between MAC OS and WINDOWS!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     rootDir: '../../',
