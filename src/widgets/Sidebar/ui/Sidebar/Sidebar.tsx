@@ -17,9 +17,13 @@ function Sidebar({ className }: SidebarProps) {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <button type="button" onClick={onToogle}>Toogle</button>
+            <button 
+                data-testid="sidebar-toggle" 
+                type="button" 
+                onClick={onToogle}>Toogle</button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
