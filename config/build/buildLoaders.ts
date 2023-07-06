@@ -63,7 +63,6 @@ export function buildLoaders({ isDev }: BuildOptions):webpack.RuleSetRule[] {
             'sass-loader',
         ],
     };
-
     // It is not available in taypskript - new babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
