@@ -1,8 +1,9 @@
-import './styles/index.scss';
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import './styles/index.scss';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { Modal } from 'shared/ui/Modal/Modal';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from '../shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
