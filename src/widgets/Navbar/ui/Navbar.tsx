@@ -16,7 +16,8 @@ function Navbar({ className }: NavbarProps) {
             <div className={cls.links}>
                 {/* <Link to={'/'} className={cls.mainLink}>Main Page</Link>
         <Link to={'/about'}>About</Link> */}
-                <AppLink
+                /
+                {/* <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to="/"
                     className={cls.mainLink}
@@ -28,7 +29,7 @@ function Navbar({ className }: NavbarProps) {
                     to="/about"
                 >
                     About
-                </AppLink>
+                </AppLink> */}
             </div>
         </div>
     );
