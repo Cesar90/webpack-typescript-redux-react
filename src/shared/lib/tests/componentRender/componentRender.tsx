@@ -8,13 +8,13 @@ import { DeepPartial } from '@reduxjs/toolkit';
 
 export interface componentRenderOptions{
   route?: string;
-  initialState?: DeepPartial<StateSchema> 
+  initialState?: DeepPartial<StateSchema>
 }
 
 export function componentRender(component: ReactNode, options:componentRenderOptions = {}) {
     const {
         route = '/',
-        initialState
+        initialState,
     } = options;
     return render(
         <StoreProvider initialState={initialState}>
@@ -22,8 +22,9 @@ export function componentRender(component: ReactNode, options:componentRenderOpt
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
                 </I18nextProvider>
+                ,
+            </MemoryRouter>
             ,
-            </MemoryRouter>,
-        </StoreProvider>
+        </StoreProvider>,
     );
 }
