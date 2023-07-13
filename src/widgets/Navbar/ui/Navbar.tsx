@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 // import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import cls from './Navbar.module.scss';
 
@@ -14,8 +15,14 @@ interface NavbarProps{
 function Navbar({ className }: NavbarProps) {
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        // setIsAuthModal((prev) => !prev);
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        // setIsAuthModal((prev) => !prev);
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -42,14 +49,17 @@ function Navbar({ className }: NavbarProps) {
             <Button
                 theme={ThemeButton.CLEAR_INVERTED}
                 className={cls.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 Sing in
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {/* eslint-disable-next-line */}
+            {/* <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam
-            </Modal>
+            </Modal> */}
+            <LoginModal
+                isOpen={isAuthModal}
+                onClose={onCloseModal}
+            />
         </div>
     );
 }
