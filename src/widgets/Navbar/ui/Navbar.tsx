@@ -78,10 +78,12 @@ function Navbar({ className }: NavbarProps) {
             {/* <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam
             </Modal> */}
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 }
